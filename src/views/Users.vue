@@ -5,6 +5,7 @@
     <router-link to="/users/1">User1へ</router-link>
     <router-link to="/users/2">User2へ</router-link>
     <h3>User No.{{ id }}</h3>
+    <router-view></router-view>
   </div>
 </template>
 
