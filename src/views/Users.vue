@@ -17,15 +17,6 @@ export default {
     toHome() {
       this.$router.push("/");
     }
-  },
-  beforeRouteEnter(to, from, next) {
-    next();
-  },
-  beforeRouteUpdate(to, from, next) {
-    next();
-  },
-  beforeRouteLeave(to, from, next) {
-    next();
   }
 };
 </script>
