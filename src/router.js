@@ -4,17 +4,31 @@ import Home from './views/Home.vue';
 import Users from './views/Users.vue';
 import UsersPosts from './views/UsersPosts.vue';
 import UsersProfile from './views/UsersProfile.vue';
+import HomeHeader from './views/HomeHeader.vue';
+import UsersHeader from './views/UsersHeader.vue';
 
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/', component: Home },
+    {
+      path: '/',
+      components: {
+        default: Home,
+        header: HomeHeader,
+      },
+    },
     {
       path: '/users/:id',
-      component: Users,
-      props: true,
+      components: {
+        default: Users,
+        header: UsersHeader,
+      },
+      props: {
+        default: true,
+        header: false,
+      },
       children: [
         {
           path: 'posts',
@@ -26,6 +40,10 @@ export default new Router({
           name: 'users-id-profile',
         },
       ],
+    },
+    {
+      path: '/hello',
+      redirect: '/',
     },
   ],
 });

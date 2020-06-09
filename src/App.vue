@@ -1,9 +1,6 @@
 <template>
   <div>
-    <nav>
-      <router-link to="/" active-class="link--active" exact>Home</router-link>
-      <router-link to="/users" active-class="link--active" exact>Users</router-link>
-    </nav>
+    <router-view name="header"></router-view>
     <router-view></router-view>
   </div>
 </template>
